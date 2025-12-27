@@ -28,4 +28,18 @@ router.route('/login').post(loginUser);
 router.route('/logout').post(verifyJWT,logoutUser);
 
 router.route('/refresh-token').post(RefreshAccesstoken);
+
+router.route('/change-password').post(verifyJWT, changeCurrentPassword);
+
+router.route('/get-current-user').get(verifyJWT, getcurrentUser);
+
+router.route('/update-account-details').patch(verifyJWT, updateAccountDetails);
+
+router.route('/avatar').patch(verifyJWT, upload.single("avatar"), updateUseravatar);
+
+router.route('/cover-image').patch(verifyJWT, upload.single("coverImage"), updateCoverImage);
+
+router.route('/channel/:username').get(verifyJWT, getUserChannelProfile);
+
+router.route('/watch-history').get(verifyJWT, getWatchHistory);
 export default router;
