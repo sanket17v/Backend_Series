@@ -313,4 +313,4 @@ const updateCoverImage = asynchandler(async (req, res) => {
         )
 });
 
-export { registerUser, loginUser, logoutUser, RefreshAccesstoken, changeCurrentPassword, getcurrentUser , updateAccountDetails , updateUseravatar };
+export { registerUser, loginUser, logoutUser, RefreshAccesstoken, changeCurrentPassword, getcurrentUser , updateAccountDetails , updateUseravatar , updateCoverImage};
