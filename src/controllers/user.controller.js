@@ -139,7 +139,7 @@ const loginUser = asynchandler(async (req, res) => {
 
 
 const logoutUser = asynchandler(async (req, res) => {
-    User.findByIdAndUpdate(req.user._id, { $set: { refreshToken: undefined } }, { new: true });
+    User.findByIdAndUpdate(req.user._id, { $unset: { refreshToken: 1 /*this removes the refresh token from document */ } }, { new: true });
 
     const options = {
         httpOnly: true,
