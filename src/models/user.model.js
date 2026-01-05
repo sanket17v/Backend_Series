@@ -60,6 +60,8 @@ userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password);
 }
 
+// By using this syntax of .methods we can create as many of methods we required
+
 userSchema.methods.generateAccessToken = function () {
     return jwt.sign(
         {
